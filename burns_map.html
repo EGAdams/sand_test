@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BurnsMap</title>
+    <script>
+
+        window.addEventListener('WebComponentsReady', function(e) {
+            const kenBurnsCarousel = document.createElement('script');
+            kenBurnsCarousel.src = '/burns.js';
+            document.head.appendChild(kenBurnsCarousel);
+    
+            kenBurnsCarousel.onload = () => {
+                // Feed demo with sample images
+                const sampleImages = [
+                    'https://source.unsplash.com/Qh9Swf_8DyA',
+                    'https://source.unsplash.com/O453M2Liufs',
+                    'https://source.unsplash.com/1OtUkD_8svc',
+                    'https://source.unsplash.com/gIgciC_WKnY',
+                    'https://source.unsplash.com/LCguCXU3Ffk',
+                ];
+    
+                for (const demo of Array.from(document.getElementsByTagName('ken-burns-carousel'))) {
+                    demo.images = sampleImages;
+                }
+            }
+        }); 
+        </script>
+    <style>
+        .container {  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "pictures pictures"
+    "times map";
+  width: 80%;
+  height: 80%;
+}
+
+.times { grid-area: times; }
+
+.map { grid-area: map; }
+
+.pictures { grid-area: pictures; }
+
+.ken-burns-carousel {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: #fff; }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="times">
+            Address: 3412 Leonard, N. W<br>
+            Walker, Michigan 49534<br>
+            Church Phone: (616)540-1766 or (616)540-2928<br>
+            rbarnesrol@aol.com
+            <h2>Service Times:</h2>
+            Wednesday 6:30pm Prayer 7pm Service<br />
+            Saturday 9:30am Prayer - 9:45 am Service<br />
+            Saturday 10:30am Brunch<br />
+            Saturday 11am Service<br />
+
+            <a href="http://www.facebook.com/rosemary.hermsbarnes">Rosemary's Facebook Page</a>
+        </div>
+        <div class="map"></div>
+        <div class="demo">
+            <ken-burns-carousel id="demo1"></ken-burns-carousel>
+        </div>
+      
+    
+    
+</body>
+</html>

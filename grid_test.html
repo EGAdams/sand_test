@@ -1,167 +1,214 @@
-
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport"
-              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>ken-burns-slideshow Demo</title>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/1.1.0/webcomponents-loader.js"></script>
-    
-        <style>
-            body {
-                background: #fafafa;
-            }
-    
-            article, footer {
-                font-size: 18px;
-                line-height: 1.6;
-                color: #333;
-                max-width: 800px;
-                padding: 10px;
-                margin: auto;
-                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            }
-    
-            a {
-                color: #666;
-                text-decoration: none;
-                transition: color 0.5s;
-            }
-    
-            a:hover {
-                color: #444;
-            }
-    
-            ken-burns-carousel {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: #fff;
-            }
-    
-            ken-burns-carousel#demo5 {
-                --img-filter: grayscale(100%);
-            }
-    
-            h2 {
-                margin-top: 64px;
-                font-size: 1.3em;
-            }
-    
-            .demo {
-                position: relative;
-                height: 0;
-                padding-bottom: 66.6%;
-            }
-    
-            pre code {
-                padding: 10px 15px !important;
-            }
-    
-            ken-burns-carousel, pre {
-                box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-            }
 
-            .grid-container {
-                display: grid;
-                grid-template-columns: auto auto;
-                background-color: #2196F3;
-                padding: 10px;
-            }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ken-burns-slideshow Demo</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/1.1.0/webcomponents-loader.js"></script>
 
-            .grid-item {
-                background-color: rgba(255, 255, 255, 0.8);
-                border: 1px solid rgba(0, 0, 0, 0.8);
-                padding: 20px;
-                font-size: 30px;
-                text-align: center;
-            }
-        </style>
-    </head>
-    <body>
+    <style>
+
+        ken-burns-carousel {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+        }
+
+        ken-burns-carousel#demo5 {
+            --img-filter: grayscale(100%);
+        }
+
+        h2 {
+            margin-top: 64px;
+            font-size: 1.3em;
+        }
+
+        .demo {
+            position: relative;
+            height: 0;
+            padding-bottom: 66.6%;
+        }
+
+        pre code {
+            padding: 10px 15px !important;
+        }
+
+        ken-burns-carousel,
+        pre {
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 4px 4px;
+            grid-auto-flow: row;
+            grid-template-areas: 
+                "pictures pictures pictures"
+                "times pictures map";
+            width: 90%;
+            max-height: 300px;
+            min-width: 200px;
+        }
+
+        .vue-map {
+            max-height: 303px;
+            min-width: 29em;
+;        }
+        
+        .map {
+            width: 400px;
+            height: 0px;
+            max-height: 400px;
+        }
+
+        .usedtobegriditem {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            font-size: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
     <article>
         <h1>Ken Burns Carousel</h1>
         <p>A bare and extremely light web component that displays a set of images with a ken burns effect.</p>
-    
+
         <p>
             <a href="https://github.com/Festify/ken-burns-carousel">View on GitHub</a> |
             <a href="https://www.npmjs.com/package/ken-burns-carousel">View on NPM</a>
         </p>
 
         <div class="grid-container">
-            <div class="grid-item"><div class="example">
+            <div class="pictures">
+                <div class="example">
+                    <div class="demo">
+                        <ken-burns-carousel id="demo1">
+                            fade-duration="1000"
+                            slide-duration="2000"
+                            images="https://source.unsplash.com/Qh9Swf_8DyA
+                            https://source.unsplash.com/O453M2Liufs
+                            https://source.unsplash.com/1OtUkD_8svc
+                            https://source.unsplash.com/gIgciC_WKnY
+                            https://source.unsplash.com/LCguCXU3Ffk">
+                        </ken-burns-carousel>
+                    </div>
+                </div>
+            </div>
+            <div class="pictures"><div class="example">
                 <div class="demo">
                     <ken-burns-carousel id="demo1">
                         fade-duration="1000"
                         slide-duration="2000"
                         images="https://source.unsplash.com/Qh9Swf_8DyA
-                            https://source.unsplash.com/O453M2Liufs
-                            https://source.unsplash.com/1OtUkD_8svc
-                            https://source.unsplash.com/gIgciC_WKnY
-                            https://source.unsplash.com/LCguCXU3Ffk">
+                        https://source.unsplash.com/O453M2Liufs
+                        https://source.unsplash.com/1OtUkD_8svc
+                        https://source.unsplash.com/gIgciC_WKnY
+                        https://source.unsplash.com/LCguCXU3Ffk">
                     </ken-burns-carousel>
                 </div>
             </div></div>
-            <div class="grid-item">        
-                
+
+            <div class="pictures">
+
                 <div class="example">
                     <div class="demo">
                         <ken-burns-carousel id="demo1"></ken-burns-carousel>
                     </div>
                 </div>
-            
+
+            </div>
+
+            <div class="times">
+                <div class="times">
+                    <div>
+                        Address: 3412 Leonard, N. W.
+                        Walker, Michigan 49534
+                        Church Phone: (616)540-1766 or (616)540-2928
+                        rbarnesrol@aol.com
+                    </div>
+                    <div class="service_times_titile">Service Times:</div>
+                    <div class="service_times">
+                        Wednesday 6:30pm Prayer 7pm Service
+                        Saturday 9:30am Prayer - 9:45 am Service
+                        Saturday 10:30am Brunch
+                        Saturday 11am Service
+                    </div>
+
+                    <div>Rosemary's Facebook Page</div>
+                </div>
+            </div>
+            <div class="pictures"><div class="example">
+                <div class="demo">
+                    <ken-burns-carousel id="demo1">
+                        fade-duration="1000"
+                        slide-duration="2000"
+                        images="https://source.unsplash.com/Qh9Swf_8DyA
+                        https://source.unsplash.com/O453M2Liufs
+                        https://source.unsplash.com/1OtUkD_8svc
+                        https://source.unsplash.com/gIgciC_WKnY
+                        https://source.unsplash.com/LCguCXU3Ffk">
+                    </ken-burns-carousel>
+                </div>
+            </div></div>
+            <app class="map"></app>
+            <script src="https://www.riveroflifegrmi.org/templates/cassiopeia/js/build.js"></script>
         </div>
 
-            <div class="grid-item">3</div>
-            <div class="grid-item">4</div>
-    </div>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github-gist.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-    
-    <script>
-        function shuffle(array) {
-            let currentIndex = array.length,  randomIndex;
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github-gist.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 
-            // While there remain elements to shuffle.
-            while (currentIndex != 0) {
+        <script>
+            function shuffle(array) {
+                let currentIndex = array.length, randomIndex;
 
-                // Pick a remaining element.
-                randomIndex = Math.floor(Math.random() * currentIndex);
-                currentIndex--;
+                // While there remain elements to shuffle.
+                while (currentIndex != 0) {
 
-                // And swap it with the current element.
-                [array[currentIndex], array[randomIndex]] = [
-                array[randomIndex], array[currentIndex]];
-            }
-            return array;
-        }
+                    // Pick a remaining element.http://www.facebook.com/rosemary.hermsbarnes
+                    randomIndex = Math.floor(Math.random() * currentIndex);
+                    currentIndex--;
 
-        hljs.initHighlightingOnLoad();
-    
-        window.addEventListener('WebComponentsReady', function(e) {
-            const kenBurnsCarousel = document.createElement('script');
-            kenBurnsCarousel.src = './burns.js';
-            document.head.appendChild(kenBurnsCarousel);
-    
-            kenBurnsCarousel.onload = () => {
-                // Feed demo with sample images
-                const sampleImages = [
-                    'https://source.unsplash.com/Qh9Swf_8DyA',
-                    'https://source.unsplash.com/O453M2Liufs',
-                    'https://source.unsplash.com/1OtUkD_8svc',
-                    'https://source.unsplash.com/gIgciC_WKnY',
-                    'https://source.unsplash.com/LCguCXU3Ffk',
-                ];
-    
-                for (const demo of Array.from(document.getElementsByTagName('ken-burns-carousel'))) {
-                    demo.images = shuffle( sampleImages );
+                    // And swap it with the current element.
+                    [array[currentIndex], array[randomIndex]] = [
+                        array[randomIndex], array[currentIndex]];
                 }
+                return array;
             }
-        });
-    </script>--
-    </body>
-    </html>
+
+            hljs.initHighlightingOnLoad();
+
+            window.addEventListener('WebComponentsReady', function (e) {
+                const kenBurnsCarousel = document.createElement('script');
+                kenBurnsCarousel.src = './burns.js';
+                document.head.appendChild(kenBurnsCarousel);
+
+                kenBurnsCarousel.onload = () => {
+                    // Feed demo with sample images
+                    const sampleImages = [
+                        'https://source.unsplash.com/Qh9Swf_8DyA',
+                        'https://source.unsplash.com/O453M2Liufs',
+                        'https://source.unsplash.com/1OtUkD_8svc',
+                        'https://source.unsplash.com/gIgciC_WKnY',
+                        'https://source.unsplash.com/LCguCXU3Ffk',
+                    ];
+
+                    for (const demo of Array.from(document.getElementsByTagName('ken-burns-carousel'))) {
+                        demo.images = shuffle(sampleImages);
+                    }
+                }
+            });
+        </script>
+</body>
+
+</html>

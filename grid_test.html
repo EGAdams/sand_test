@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -9,7 +10,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/1.1.0/webcomponents-loader.js"></script>
 
     <style>
-
         ken-burns-carousel {
             position: absolute;
             top: 0;
@@ -45,13 +45,13 @@
 
         .grid-container {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
             gap: 4px 4px;
             grid-auto-flow: row;
-            grid-template-areas: 
-                "pictures pictures pictures"
-                "times pictures map";
+            grid-template-areas:
+                "pictures pictures"
+                "address times";
             width: 90%;
             max-height: 300px;
             min-width: 200px;
@@ -60,8 +60,9 @@
         .vue-map {
             max-height: 303px;
             min-width: 29em;
-;        }
-        
+            ;
+        }
+
         .map {
             width: 400px;
             height: 0px;
@@ -75,11 +76,32 @@
             font-size: 15px;
             text-align: center;
         }
+
+        .address {
+            /* grid-area: 2 / 1 / 3 / 2; */
+            border-style: solid;
+            border-width: 1px;
+            padding: 3px;
+        }
+
+        .service_times {
+            /* grid-area: 3 / 2 / 2 / 2; */
+            border-style: solid;
+            border-width: 1px;
+            padding: 3px;
+        }
+
+        .title {
+            font-size: 1.3em;
+            font-weight: bold;
+            padding: .5%;
+            padding-top: 1.1%;
+        }
     </style>
 </head>
 
 <body>
-    <article>
+    
         <h1>Ken Burns Carousel</h1>
         <p>A bare and extremely light web component that displays a set of images with a ken burns effect.</p>
 
@@ -95,6 +117,18 @@
                         <ken-burns-carousel id="demo1">
                             fade-duration="1000"
                             slide-duration="2000"
+                            images="https://www.riveroflifegrmi.org/templates/colddaybootstrap/images/church_location_sized.jpg
+                            https://source.unsplash.com/O453M2Liufs">
+                        </ken-burns-carousel>
+                    </div>
+                </div> -->
+            </div>
+            <div class="pictures">
+                <div class="example">
+                    <div class="demo">
+                        <ken-burns-carousel id="demo1">
+                            fade-duration="1000"
+                            slide-duration="2000"
                             images="https://source.unsplash.com/Qh9Swf_8DyA
                             https://source.unsplash.com/O453M2Liufs
                             https://source.unsplash.com/1OtUkD_8svc
@@ -104,50 +138,35 @@
                     </div>
                 </div>
             </div>
-            <div class="pictures"><div class="example">
-                <div class="demo">
-                    <ken-burns-carousel id="demo1">
-                        fade-duration="1000"
-                        slide-duration="2000"
-                        images="https://source.unsplash.com/Qh9Swf_8DyA
-                        https://source.unsplash.com/O453M2Liufs
-                        https://source.unsplash.com/1OtUkD_8svc
-                        https://source.unsplash.com/gIgciC_WKnY
-                        https://source.unsplash.com/LCguCXU3Ffk">
-                    </ken-burns-carousel>
+
+            <div class="address">
+                <div>
+                    <div class="title">Address</div>
+                    3412 Leonard, N. W.
+                    Walker, Michigan 49534
+                    <div class="title">Church Phone: </div>
+                    (616)540-1766 or (616)540-2928
+                    <div class="title">Church Email: </div>
+                    rbarnesrol@aol.com
                 </div>
-            </div></div>
-
-            <div class="pictures">
-
-                <div class="example">
-                    <div class="demo">
-                        <ken-burns-carousel id="demo1"></ken-burns-carousel>
-                    </div>
-                </div>
-
             </div>
 
-            <div class="times">
-                <div class="times">
-                    <div>
-                        Address: 3412 Leonard, N. W.
-                        Walker, Michigan 49534
-                        Church Phone: (616)540-1766 or (616)540-2928
-                        rbarnesrol@aol.com
-                    </div>
-                    <div class="service_times_titile">Service Times:</div>
-                    <div class="service_times">
+
+
+            <div class="service_times">
+                <div>
+                    <div class="title">Service Times</div>
+
                         Wednesday 6:30pm Prayer 7pm Service
                         Saturday 9:30am Prayer - 9:45 am Service
                         Saturday 10:30am Brunch
                         Saturday 11am Service
-                    </div>
 
                     <div>Rosemary's Facebook Page</div>
                 </div>
             </div>
-            <div class="pictures"><div class="example">
+
+            <!-- <div class="pictures"><div class="example">
                 <div class="demo">
                     <ken-burns-carousel id="demo1">
                         fade-duration="1000"
@@ -159,55 +178,55 @@
                         https://source.unsplash.com/LCguCXU3Ffk">
                     </ken-burns-carousel>
                 </div>
-            </div></div>
-            <app class="map"></app>
-            <script src="https://www.riveroflifegrmi.org/templates/cassiopeia/js/build.js"></script>
+            </div> -->
+        
+
         </div>
+
+
+
 
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github-gist.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 
         <script>
-            function shuffle(array) {
+            function shuffle( array ) {
                 let currentIndex = array.length, randomIndex;
 
                 // While there remain elements to shuffle.
-                while (currentIndex != 0) {
+                while ( currentIndex != 0 ) {
 
                     // Pick a remaining element.http://www.facebook.com/rosemary.hermsbarnes
-                    randomIndex = Math.floor(Math.random() * currentIndex);
+                    randomIndex = Math.floor( Math.random() * currentIndex );
                     currentIndex--;
 
                     // And swap it with the current element.
-                    [array[currentIndex], array[randomIndex]] = [
-                        array[randomIndex], array[currentIndex]];
+                    [ array[ currentIndex ], array[ randomIndex ] ] = [
+                        array[ randomIndex ], array[ currentIndex ] ];
                 }
                 return array;
             }
 
             hljs.initHighlightingOnLoad();
 
-            window.addEventListener('WebComponentsReady', function (e) {
-                const kenBurnsCarousel = document.createElement('script');
+            window.addEventListener( 'WebComponentsReady', function ( e ) {
+                const kenBurnsCarousel = document.createElement( 'script' );
                 kenBurnsCarousel.src = './burns.js';
-                document.head.appendChild(kenBurnsCarousel);
+                document.head.appendChild( kenBurnsCarousel );
 
                 kenBurnsCarousel.onload = () => {
                     // Feed demo with sample images
                     const sampleImages = [
                         'https://source.unsplash.com/Qh9Swf_8DyA',
-                        'https://source.unsplash.com/O453M2Liufs',
-                        'https://source.unsplash.com/1OtUkD_8svc',
-                        'https://source.unsplash.com/gIgciC_WKnY',
-                        'https://source.unsplash.com/LCguCXU3Ffk',
+                        'https://www.riveroflifegrmi.org/templates/colddaybootstrap/images/church_location_sized.jpg'
                     ];
 
-                    for (const demo of Array.from(document.getElementsByTagName('ken-burns-carousel'))) {
-                        demo.images = shuffle(sampleImages);
+                    for ( const demo of Array.from( document.getElementsByTagName( 'ken-burns-carousel' ) ) ) {
+                        demo.images = shuffle( sampleImages );
                     }
                 }
-            });
+            } );
         </script>
 </body>
 

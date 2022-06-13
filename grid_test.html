@@ -114,11 +114,12 @@
             <div class="pictures">
                 <div class="example">
                     <div class="demo">
-                        <ken-burns-carousel id="demo1">
-                            fade-duration="1000"
-                            slide-duration="2000"
+                        <ken-burns-carousel id="first_image_container"
+                            fade-duration="1500"
+                            slide-duration="3000"
                             images="https://www.riveroflifegrmi.org/templates/colddaybootstrap/images/church_location_sized.jpg
-                            https://source.unsplash.com/O453M2Liufs">
+                            https://www.riveroflifegrmi.org/templates/colddaybootstrap/images/large_Robert_Barnes_wave_sized.jpg
+                            https://www.riveroflifegrmi.org/templates/colddaybootstrap/images/leadership_party_robert_and_rosemary_1_08_sized.jpg">
                         </ken-burns-carousel>
                     </div>
                 </div> 
@@ -126,14 +127,16 @@
             <div class="pictures">
                 <div class="example">
                     <div class="demo">
-                        <ken-burns-carousel id="demo1">
-                            fade-duration="1000"
+                        <ken-burns-carousel id="second_image_container"
+                            fade-duration="700"
                             slide-duration="2000"
-                            images="https://source.unsplash.com/Qh9Swf_8DyA
+                            images=
+                            "https://source.unsplash.com/Qh9Swf_8DyA
                             https://source.unsplash.com/O453M2Liufs
                             https://source.unsplash.com/1OtUkD_8svc
                             https://source.unsplash.com/gIgciC_WKnY
-                            https://source.unsplash.com/LCguCXU3Ffk">
+                            https://source.unsplash.com/LCguCXU3Ffk"
+                            >
                         </ken-burns-carousel>
                     </div>
                 </div>
@@ -217,14 +220,14 @@
 
                 kenBurnsCarousel.onload = () => {
                     // Feed demo with sample images
-                    const sampleImages = [
-                        'https://source.unsplash.com/Qh9Swf_8DyA',
-                        'https://www.riveroflifegrmi.org/templates/colddaybootstrap/images/church_location_sized.jpg'
-                    ];
+                    // const sampleImages = [
+                    //     'https://source.unsplash.com/Qh9Swf_8DyA',
+                    //     'https://www.riveroflifegrmi.org/templates/colddaybootstrap/images/church_location_sized.jpg'
+                    // ];
 
-                    for ( const demo of Array.from( document.getElementsByTagName( 'ken-burns-carousel' ) ) ) {
-                        demo.images = shuffle( sampleImages );
-                    }
+                    // for ( const demo of Array.from( document.getElementsByTagName( 'ken-burns-carousel' ) ) ) {
+                    //     demo.images = shuffle( sampleImages );
+                    // }
                 }
             } );
         </script>

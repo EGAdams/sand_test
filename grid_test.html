@@ -6,7 +6,7 @@
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ken-burns-slideshow Demo</title>
+    <title>ROL Home</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/1.1.0/webcomponents-loader.js"></script>
 
     <style>
@@ -89,6 +89,7 @@
             border-style: solid;
             border-width: 1px;
             padding: 3px;
+            font-size: 20px;
         }
 
         .title {
@@ -101,26 +102,18 @@
 </head>
 
 <body>
-    
-        <h1>Ken Burns Carousel</h1>
-        <p>A bare and extremely light web component that displays a set of images with a ken burns effect.</p>
-
-        <p>
-            <a href="https://github.com/Festify/ken-burns-carousel">View on GitHub</a> |
-            <a href="https://www.npmjs.com/package/ken-burns-carousel">View on NPM</a>
-        </p>
-
         <div class="grid-container">
             <div class="pictures">
                 <div class="example">
                     <div class="demo">
                         <ken-burns-carousel id="first_image_container"
                             fade-duration="1500"
-                            slide-duration="3000"
+                            slide-duration="6000"
                             images="https://www.riveroflifegrmi.org/templates/colddaybootstrap/images/church_location_sized.jpg
                             https://www.riveroflifegrmi.org/templates/colddaybootstrap/images/large_Robert_Barnes_wave_sized.jpg
-                            https://www.riveroflifegrmi.org/templates/colddaybootstrap/images/another_church_in_argentina.jpg"
-                            https://www.riveroflifegrmi.org/templates/colddaybootstrap/images/leadership_party_robert_and_rosemary_1_08_sized.jpg">
+                            https://www.riveroflifegrmi.org/photos/ministry_outreach_photos/another_church_in_argentina.jpg
+                            https://www.riveroflifegrmi.org/templates/colddaybootstrap/images/leadership_party_robert_and_rosemary_1_08_sized.jpg
+                            https://www.riveroflifegrmi.org/images/top_row/congregationpicture.jpg">
                         </ken-burns-carousel>
                     </div>
                 </div> 
@@ -130,13 +123,15 @@
                     <div class="demo">
                         <ken-burns-carousel id="second_image_container"
                             fade-duration="700"
-                            slide-duration="2000"
+                            slide-duration="4000"
                             images=
-                            "https://source.unsplash.com/Qh9Swf_8DyA
-                            https://source.unsplash.com/O453M2Liufs
-                            https://source.unsplash.com/1OtUkD_8svc
-                            https://source.unsplash.com/gIgciC_WKnY
-                            https://source.unsplash.com/LCguCXU3Ffk"
+                            "https://www.riveroflifegrmi.org/photos/ministry_outreach_photos/outreach_06_012808.jpg
+                            https://www.riveroflifegrmi.org/photos/ministry_outreach_photos/outreach_07_012808.jpg
+                            https://www.riveroflifegrmi.org/photos/ministry_outreach_photos/outreach_11_012808.jpg
+                            https://www.riveroflifegrmi.org/images/slider_row/100090002_10157601997037602_6020180131803299840_n.jpg
+                            https://www.riveroflifegrmi.org/administrator/cache/preview/809f55ce281dcb2ea6885188a10dd7eb.jpg
+                            https://www.riveroflifegrmi.org/images/unlimited_row/1485995_877405962285249_5576116497943534535_o.jpg
+                            "
                             >
                         </ken-burns-carousel>
                     </div>
@@ -146,27 +141,40 @@
             <div class="address">
                 <div>
                     <div class="title">Address</div>
+                    <a href="https://www.google.com/maps/place/River+of+Life+Ministries/@42.9856887,-85.7543093,17z/data=!3m1!4b1!4m5!3m4!1s0x8819af71710f100b:0xd2c9ac2d3dca2bd6!8m2!3d42.9856884!4d-85.7521153">
                     3412 Leonard, N. W.
-                    Walker, Michigan 49534
+                    Walker, Michigan 49534</a>
                     <div class="title">Church Phone: </div>
-                    (616)540-1766 or (616)540-2928
+                    <a href="tel:6165401766">(616)540-1766</a> or <a href="tel:6165402928">(616)540-2928</a>
                     <div class="title">Church Email: </div>
-                    rbarnesrol@aol.com
+                    <a href="mailto:rbarnesrol@aol.com"><strong>rbarnesrol@aol.com</strong></a>
                 </div>
             </div>
 
 
 
-            <div class="service_times">
+            
                 <div>
                     <div class="title">Service Times</div>
-
-                        Wednesday 6:30pm Prayer 7pm Service
-                        Saturday 9:30am Prayer - 9:45 am Service
-                        Saturday 10:30am Brunch
-                        Saturday 11am Service
-
-                    <div>Rosemary's Facebook Page</div>
+                       <div class="service_times"> 
+                        <table>
+                            <tr>
+                                <td>Wednesday</td><td><span style="padding-left: 3%">6:30pm Prayer 7pm Service</span></td>
+                            </tr>
+                            <tr>
+                                <td>Saturday</td><td>9:30am Prayer - 9:45 am Service</td>
+                            </tr>
+                            <tr>
+                                <td>Saturday</td><td>10:30am Brunch</td>
+                            </tr>
+                            <tr>
+                                <td>Saturday</td><td>11am Service</td>
+                            </tr>
+                        </table>
+                            
+                         <br>
+                        </div>
+                    <div><a href="http://www.facebook.com/rosemary.hermsbarnes">Rosemary's Facebook Page </a></span></div>
                 </div>
             </div>
 
@@ -183,17 +191,13 @@
                     </ken-burns-carousel>
                 </div>
             </div> -->
-        
+
 
         </div>
-
-
-
-
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github-gist.min.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github-gist.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-
+        
         <script>
             function shuffle( array ) {
                 let currentIndex = array.length, randomIndex;
